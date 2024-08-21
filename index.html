@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="menuIconBox">
+            <div class="link1"></div>
+            <div class="link2"></div>
+            <div class="link3"></div>
+        </div>
+        <div class="box">
+            <nav>
+                <ul>
+                    <li><a href="#">home</a></li>
+                    <li><a href="#">profile</a></li>
+                    <li><a href="#">settings</a></li>
+                    <li><a href="#">about us</a></li>
+                    <li><a href="#">contact us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <script>
+        let menuIconBox = document.querySelector('.menuIconBox');
+        let box = document.querySelector('.box');
+        menuIconBox.onclick = function () {
+            menuIconBox.classList.toggle("active");
+            box.classList.toggle("active");
+        }
+
+        document.onclick = function(e) {
+            if (!menuIconBox.contains(e.target) && !box.contains(e.target)) {
+                menuIconBox.classList.remove("active");
+                box.classList.remove("active");
+            }
+        }
+    </script>
+</body>
+</html>
